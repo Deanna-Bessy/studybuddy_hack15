@@ -26,7 +26,7 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 SET search_path = public, pg_catalog;
 
 --
--- Name: item1; Type: TYPE; Schema: public; Owner: samweiss
+-- Name: item1; Type: TYPE; Schema: public; Owner: postgres
 --
 
 CREATE TYPE item1 AS (
@@ -35,10 +35,10 @@ CREATE TYPE item1 AS (
 );
 
 
-ALTER TYPE item1 OWNER TO samweiss;
+ALTER TYPE item1 OWNER TO postgres;
 
 --
--- Name: room; Type: TYPE; Schema: public; Owner: samweiss
+-- Name: room; Type: TYPE; Schema: public; Owner: postgres
 --
 
 CREATE TYPE room AS (
@@ -49,14 +49,14 @@ CREATE TYPE room AS (
 );
 
 
-ALTER TYPE room OWNER TO samweiss;
+ALTER TYPE room OWNER TO postgres;
 
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
--- Name: academics; Type: TABLE; Schema: public; Owner: samweiss; Tablespace: 
+-- Name: academics; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE academics (
@@ -65,10 +65,10 @@ CREATE TABLE academics (
 );
 
 
-ALTER TABLE academics OWNER TO samweiss;
+ALTER TABLE academics OWNER TO postgres;
 
 --
--- Name: groups; Type: TABLE; Schema: public; Owner: samweiss; Tablespace: 
+-- Name: groups; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE groups (
@@ -82,10 +82,10 @@ CREATE TABLE groups (
 );
 
 
-ALTER TABLE groups OWNER TO samweiss;
+ALTER TABLE groups OWNER TO postgres;
 
 --
--- Name: map; Type: TABLE; Schema: public; Owner: samweiss; Tablespace: 
+-- Name: map; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE map (
@@ -99,10 +99,10 @@ CREATE TABLE map (
 );
 
 
-ALTER TABLE map OWNER TO samweiss;
+ALTER TABLE map OWNER TO postgres;
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: samweiss; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE users (
@@ -115,10 +115,10 @@ CREATE TABLE users (
 );
 
 
-ALTER TABLE users OWNER TO samweiss;
+ALTER TABLE users OWNER TO postgres;
 
 --
--- Data for Name: academics; Type: TABLE DATA; Schema: public; Owner: samweiss
+-- Data for Name: academics; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY academics (subject, course) FROM stdin;
@@ -126,7 +126,7 @@ COPY academics (subject, course) FROM stdin;
 
 
 --
--- Data for Name: groups; Type: TABLE DATA; Schema: public; Owner: samweiss
+-- Data for Name: groups; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY groups (subject, class, end_time, gid, participants, room, messages) FROM stdin;
@@ -134,7 +134,7 @@ COPY groups (subject, class, end_time, gid, participants, room, messages) FROM s
 
 
 --
--- Data for Name: map; Type: TABLE DATA; Schema: public; Owner: samweiss
+-- Data for Name: map; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY map (area, building, school, rid, lat, lon, radius) FROM stdin;
@@ -144,7 +144,7 @@ Off main	574 Boston Ave.	Tufts	2	42.4038639999999987	-71.1141149999999982	30
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: samweiss
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY users (name, pass, room, checkin, study_group, uid) FROM stdin;
@@ -152,7 +152,7 @@ COPY users (name, pass, room, checkin, study_group, uid) FROM stdin;
 
 
 --
--- Name: groups_gid_key; Type: CONSTRAINT; Schema: public; Owner: samweiss; Tablespace: 
+-- Name: groups_gid_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY groups
@@ -160,7 +160,7 @@ ALTER TABLE ONLY groups
 
 
 --
--- Name: map_rid_key; Type: CONSTRAINT; Schema: public; Owner: samweiss; Tablespace: 
+-- Name: map_rid_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY map
@@ -168,7 +168,7 @@ ALTER TABLE ONLY map
 
 
 --
--- Name: users_uid_key; Type: CONSTRAINT; Schema: public; Owner: samweiss; Tablespace: 
+-- Name: users_uid_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY users
@@ -176,12 +176,12 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: public; Type: ACL; Schema: -; Owner: samweiss
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM samweiss;
-GRANT ALL ON SCHEMA public TO samweiss;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
